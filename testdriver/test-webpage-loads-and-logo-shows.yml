@@ -1,0 +1,16 @@
+version: 4.1.30
+steps:
+  - prompt: Open the browser to ensure the webpage loads.
+    commands:
+      - command: assert
+        expect: the Google logo is visible
+  - prompt: Assert that the Google logo is displayed.
+    commands:
+      - command: assert
+        expect: the Google logo is visible
+  - prompt: >-
+      Assert there are no loading errors.  # Use the content of the file from
+      the environment
+    commands:
+      - command: assert
+        expect: no error messages are visible
