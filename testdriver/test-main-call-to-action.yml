@@ -1,0 +1,52 @@
+version: 4.1.30
+steps:
+  - prompt: Click "I'm Feeling Lucky".
+    commands:
+      - command: hover-text
+        text: I'm Feeling Lucky
+        description: button next to Google Search on the homepage
+        action: click
+  - prompt: Click "I'm Feeling Lucky".
+    commands:
+      - command: hover-text
+        text: I'm Feeling Lucky
+        description: button next to Google Search on the homepage
+        action: click
+  - prompt: Click "I'm Feeling Lucky".
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Not now
+        description: button to dismiss location prompt
+        action: click
+  - prompt: Click "I'm Feeling Lucky".
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: press-keys
+        keys:
+          - alt
+          - left
+  - prompt: Click "I'm Feeling Lucky".
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: press-keys
+        keys:
+          - alt
+          - left
+      - command: hover-text
+        text: I'm Feeling Lucky
+        description: button next to Google Search on the homepage
+        action: click
+  - prompt: Assert that it redirects to the expected page.
+    commands:
+      - command: assert
+        expect: the page is Google Trends
+  - prompt: >-
+      Assert there are no errors on the redirected page.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the page displays trending topics without errors
