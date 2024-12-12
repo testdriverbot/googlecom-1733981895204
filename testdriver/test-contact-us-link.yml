@@ -1,0 +1,7 @@
+version: 4.1.30
+steps:
+  - prompt: Scroll down to find "Contact Us" at the bottom of the page.
+    commands:
+      - command: scroll-until-text
+        text: Contact Us
+        direction: down
